@@ -1,0 +1,100 @@
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", Arial, sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html,
+body,
+ul,
+ol,
+li,
+form,
+fieldset,
+legend,
+select,
+input {
+  margin: 0;
+  padding: 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0; }
+
+fieldset,
+img {
+  border: 0; }
+
+li {
+  list-style: none; }
+
+h1 {
+  font-size: 3.5rem; }
+
+body {
+  margin: 3rem; }
+  body form {
+    border: 1px solid rgba(117, 111, 111, 0.603);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 1.5rem 1.5rem 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    max-width: 40rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
+    body form .form__group {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      margin: 0.3rem; }
+      body form .form__group label {
+        margin-right: 2rem;
+        width: 6rem; }
+      body form .form__group input {
+        width: 30rem;
+        font-family: "Lato";
+        font-size: 1.4rem;
+        padding: 0.3rem; }
+      body form .form__group select {
+        width: 30.2rem;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        font-family: "Lato";
+        font-size: 1.4rem;
+        padding: 0.3rem; }
+      body form .form__group .midSelect {
+        width: 18.2rem;
+        margin-right: 1rem; }
+      body form .form__group .shortInput {
+        width: 10rem; }
+    body form button {
+      margin: 1rem 0.8rem 0 0;
+      padding: 0.4rem 0;
+      font-size: 1.2rem;
+      background-color: #cccccc;
+      border: 1px solid rgba(117, 111, 111, 0.603);
+      width: 9rem; }
+  body button {
+    margin-top: 3rem;
+    padding: 1rem 1rem;
+    font-size: 1.6rem;
+    background-color: #cccccc;
+    border: 1px solid rgba(117, 111, 111, 0.603);
+    width: 12rem; }

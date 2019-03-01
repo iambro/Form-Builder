@@ -225,6 +225,74 @@ class FormBuilder extends React.Component {
     }
   };
 
+  componentDidMount(){
+    let request = window.indexedDB.open("Database", 1);
+    
+    request.onupgradeneeded = (event) => {
+      let db = event.target.result;
+      let componentsStore = db.createObjectStore('data', {keyPath: 'id'});
+    };
+  }
+
+  componentDidUpdate() {
+    let request = window.indexedDB.open("Database", 1);
+    request.onsuccess = (event) => {
+      // dates from state
+      let copy = this.state.componentsList;
+      let data = [];
+      let i;
+      for(i = 0; i < copy.length; i++){
+        data.push(Object.assign({}, copy[i]))}
+
+      data.forEach(x => {
+        if(x.compType === NewInput){
+          x.compType = "NewInput"
+        } else if(x.compType === SubInput){
+          x.compType = "SubInput"
+        }
+      })
+
+      // get database from event
+      let db = event.target.result;
+
+      // create transaction from database
+      let transaction = db.transaction(['data'], 'readwrite');
+
+      // add succes event handler for transaction
+      transaction.onsuccess = (event) => {
+        console.log('[Transaction] ALL DONE!')
+      }
+
+      // add error event handler for transaction
+      transaction.onerror = (event) => {
+        console.log('ERROR' + event.target.error)
+      }
+
+      // get store from transaction
+      let componentsStore = transaction.objectStore('data');
+
+      /*****************************/
+
+      // put data in componentsStore
+      data.forEach(function(component){
+        let db_op_req = componentsStore.add(component);
+
+        db_op_req.onsuccess = (event) => {
+          console.log(event.target.result == component.id); // true
+        }
+      })
+    }
+
+    request.onerror = (event) => {
+      console.log('[onerror]', request.error);
+    };
+    
+    request.onupgradeneeded = (event) => {
+      let db = event.target.result;
+      let componentsStore = db.createObjectStore('data', {keyPath: 'id'});
+    };
+    };
+
   render() {
     const components = this.state.componentsList.map(component => (
       <component.compType

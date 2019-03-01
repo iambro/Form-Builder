@@ -1,0 +1,41 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+ol,
+li,
+form,
+fieldset,
+legend,
+select,
+input {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+li {
+  list-style: none;
+}
